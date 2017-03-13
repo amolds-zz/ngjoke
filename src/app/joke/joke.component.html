@@ -1,18 +1,20 @@
-<div>
-  <label for="setup">Setup</label>
-  <input [value]="setup" name="setup"/>
-</div>
-<div>
-  <label for="punchline">Punchline</label>
-  <input [value]="punchline" name="punchline"/>
-</div>
+<md-card>
+  <div>
+    <label for="setup">Setup</label>
+    <input [value]="setup" name="setup"/>
+  </div>
+  <div>
+    <label for="punchline">Punchline</label>
+    <input [value]="punchline" name="punchline"/>
+  </div>
 
-<div>
-  Lol <app-upvote [votes]="lols" (incrementVotes)="addLol()" (decrementVotes)="subLol()"></app-upvote>
-</div>
-<div>
-  Groan <app-upvote [votes]="groans" (incrementVotes)="addGroan()" (decrementVotes)="subGroan()"></app-upvote>
-</div>
+  <div>
+    Lol <app-upvote [votes]="lols" (incrementVotes)="addLol()" (decrementVotes)="subLol()"></app-upvote>
+  </div>
+  <div>
+    Groan <app-upvote [votes]="groans" (incrementVotes)="addGroan()" (decrementVotes)="subGroan()"></app-upvote>
+  </div>
+</md-card>
 
 <!--
 <div>
