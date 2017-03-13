@@ -3,16 +3,16 @@ import {Vote} from './vote.model'
 //type Jokes: Array<Joke>();
 
 export class Joke {
-    constructor(public setup:string, public punchline:string, 
+    constructor(public id:string, public setup:string, public punchline:string, 
         private lols?:Vote, private groans?:Vote, private source?:string) {
 
     }
 
     public static getJokes: Array<Joke> = [
-        new Joke('Why did the skeleton not cross the road', 'It did not have the guts!!!', new Vote(3), new Vote(2)),
-        new Joke('Why did the chicken cross the road', 'To get to the other side'),
-        new Joke('When is a door not a door?', 'When it is a tomato', new Vote(0), new Vote(12)),
-        new Joke('How many (javascript) developers does it take to make a joke?', 'Answer is [undefined]]', new Vote(12345), new Vote(0))
+        new Joke('1','Why did the skeleton not cross the road', 'It did not have the guts!!!', new Vote(3), new Vote(2)),
+        new Joke('2','Why did the chicken cross the road', 'To get to the other side'),
+        new Joke('3','When is a door not a door?', 'When it is a tomato', new Vote(0), new Vote(12)),
+        new Joke('4','How many (javascript) developers does it take to make a joke?', 'Answer is [undefined]]', new Vote(12345), new Vote(0))
     ];
 
     groanCount() {

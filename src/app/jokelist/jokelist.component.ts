@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Joke } from '../joke.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jokelist',
@@ -9,7 +10,7 @@ import { Joke } from '../joke.model';
 export class JokelistComponent implements OnInit {
 
   @Input() jokes: Array<Joke>;
-  constructor() { 
+  constructor(private router: Router) { 
     
   }
 
@@ -18,4 +19,7 @@ export class JokelistComponent implements OnInit {
     console.log("# jokes = ", this.jokes.length);
   }
 
+  selectJoke(id: string) {
+    this.router.navigateByUrl(`jokes/${id}`);
+  }
 }

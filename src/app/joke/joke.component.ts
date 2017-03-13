@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Joke } from '../joke.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-joke',
@@ -8,7 +9,8 @@ import { Joke } from '../joke.model';
 })
 export class JokeComponent implements OnInit {
 
-  @Input() joke: Joke;
+  //@Input() joke: Joke;
+  private joke: Joke;
 
   public setup: string;
   public punchline: string;
@@ -17,7 +19,7 @@ export class JokeComponent implements OnInit {
 
   //private aJoke: Joke = new Joke('Why did the chicken cross the road?', 'To get to the other side.');
 
-  constructor() { 
+  constructor(private route:ActivatedRoute) { 
     this.setup = 'Why did the chicken cross the road?';
     this.punchline = 'To get to the other side.';
     this.groans = 0;
@@ -25,8 +27,24 @@ export class JokeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setup = this.joke.setup;
-    this.punchline = this.joke.punchline;
+    let jokeId = this.route.snapshot.params['id'];
+
+    let jokes = Joke.getJokes;
+
+    jokes.forEach(joke => {
+      if (joke.id == jokeId) {
+        this.joke = joke;
+      }
+    });
+
+    if (this.joke) {
+      this.setup = this.joke.setup;
+      this.punchline = this.joke.punchline;
+      this.groans = this.joke.groanCount();
+      this.lols = this.joke.lolCount();
+    } else {
+      // route back to jokes list
+    }
   }
 
   addGroan() {
