@@ -1,5 +1,7 @@
 # Jokeapp
 
+This project was built during the Visual Studio Live 2017, Angular 2 workshop put on by Ted Neward.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 
 ## Development server

@@ -1,6 +1,8 @@
 export class Vote {
     constructor(public count:number) {
-
+        if (!count) {
+            count = 0;
+        }
     }
 
     incrementCount() {

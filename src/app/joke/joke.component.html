@@ -1,6 +1,32 @@
 <div>
-  {{aJoke.setup}}
+  <label for="setup">Setup</label>
+  <input [value]="setup" name="setup"/>
 </div>
 <div>
-  {{aJoke.punchline}}
+  <label for="punchline">Punchline</label>
+  <input [value]="punchline" name="punchline"/>
 </div>
+
+<div>
+  Lol <app-upvote [votes]="lols" (incrementVotes)="addLol()" (decrementVotes)="subLol()"></app-upvote>
+</div>
+<div>
+  Groan <app-upvote [votes]="groans" (incrementVotes)="addGroan()" (decrementVotes)="subGroan()"></app-upvote>
+</div>
+
+<!--
+<div>
+  <label for="groan">Groans</label>
+  <input [(ngModel)]="groans" name="groan"/>
+  {{groans}}
+</div>
+<div>
+  <label for="lol">Lols</label>
+  <input [(ngModel)]="lols" name="lol"/>
+  {{lols}}
+</div>
+<div>
+  <button (click)="addGroan()">Add Groan</button>
+  <button (click)="addLol()">Add Lol</button>
+</div>
+-->

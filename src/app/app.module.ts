@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { JokeComponent } from './joke/joke.component';
 import { Test2Component } from './test2/test2.component';
+import { UpvoteComponent } from './upvote/upvote.component';
+import { JokelistComponent } from './jokelist/jokelist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
     JokeComponent,
-    Test2Component
+    Test2Component,
+    UpvoteComponent,
+    JokelistComponent
   ],
   imports: [
     BrowserModule,
